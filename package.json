@@ -1,0 +1,29 @@
+{
+  "name": "Helloween_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isakura313/Helloween_game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isakura313/Helloween_game/issues"
+  },
+  "homepage": "https://github.com/isakura313/Helloween_game#readme",
+  "dependencies": {
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
+  },
+  "devDependencies": {
+    "anime": "^0.1.2",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
