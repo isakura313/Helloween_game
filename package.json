@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "anime": "^0.1.2",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
     "webpack-dev-server": "^3.7.1"
   }
 }

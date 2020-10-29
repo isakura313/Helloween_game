@@ -1,6 +1,30 @@
-textarea{
-    font-size: 25px;
+body{
+    background-image: url("img/brick.png");
+    background-size: cover;
+}
+
+.code_space{
+    font-size: 30px;
 }
 .wrapper{
     display: flex;
+}
+.main__h1{
+    font-family: 'Jolly Lodger', cursive;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color:red;
+}
+.door{
+    height: 400px;
+    filter: drop-shadow(16px 16px 10px darkred)
+}
+.wrap_code{
+    /*display: flex;*/
+    flex-direction: column;
+}
+.CodeMirror {
+    font-size: 25px;
+    width: 1000px;
 }

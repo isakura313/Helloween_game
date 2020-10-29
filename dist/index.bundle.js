@@ -94,7 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _door__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./door */ \"./js/door.js\");\n\nlet root = document.getElementById(\"root\");\nlet door = new _door__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"img\",\"img/door.png\", \"просто дверь\")\nconst town = document.createElement(\"div\");\nlet input = document.createElement(\"textarea\")\nconst btn   = document.createElement(\"button\")\ninput.rows = 10;\ninput.cols = 30;\ntown.classList.add(\"wrapper\");\nbtn.innerText = \"Отправить\";\ntown.appendChild(btn)\nbtn.onclick = () =>{\n    try {\n        // town.style.justifyContent = \"space-around\";\n        console.log(input.value)\n        eval(input.value);\n    } catch (er){\n        console.log(er);\n    }\n}\n\n\n\nroot.appendChild(town);\nfor (let i = 0; i < 3; i++) {\n    town.insertAdjacentElement(\"afterbegin\", door.createEl());\n}\nroot.appendChild(input);\n\n\n//# sourceURL=webpack:///./js/code.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _door__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./door */ \"./js/door.js\");\n/* harmony import */ var _textarea__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./textarea */ \"./js/textarea.js\");\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data.json */ \"./js/data.json\");\nvar _data_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data.json */ \"./js/data.json\", 1);\n // загружает нашу дверку, точнее ее класс\n\n // загружаем всю информацию из JSON\n\nlet root = document.getElementById(\"root\"); // основной корневой элемент\n\n\nconst house = document.createElement(\"div\");\nlet wrap_code = document.createElement(\"div\");\nwrap_code.classList.add(\"wrap_code\")\nlet textarea = new _textarea__WEBPACK_IMPORTED_MODULE_1__[\"default\"](\"textarea\",5, 5, \"code_space\" )\nconst btn = document.createElement(\"button\")\nlet text_area = textarea.createEl();\nroot.appendChild(house);\nroot.appendChild(wrap_code)\n\nwrap_code.append(text_area)\nwrap_code.appendChild(btn)\nhouse.classList.add(\"wrapper\");\nbtn.innerText = \"Отправить\";\n\nconst codemirrorEditor = CodeMirror.fromTextArea(text_area, {\n    lineNumbers: true,\n    mode: \"javascript\",\n    theme: \"base16-dark\",\n});\n\nclass RegExp1 extends RegExp {\n    [Symbol.split](str, limit) {\n        const result = RegExp.prototype[Symbol.split].call(this, str, limit);\n        return result.map(x => `(${x})`);\n    }\n}\n\n\n// document.getElementsByClassName(\"CodeMirror-scroll\")[0].fontSize = \"20px\"\n\n\nbtn.onclick = () =>{\n    try {\n        // house.style.justifyContent = \"center\";\n        let codeMirror = document.querySelector(\".CodeMirror-code\");\n        let codes = codeMirror.querySelectorAll(\"pre\");\n        let codes_arr = [...codes];\n        let str_code = \"\";\n        codes_arr.map((el)=>{\n            str_code += el.textContent;\n        })\n        console.log(str_code);\n        eval(str_code);\n\n\n    } catch (er){\n        console.log(er);\n    }\n}\n\n\n\n\nfor (let i = 0; i < 3; i++) {\n    let door = new _door__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"img\",`img/${_data_json__WEBPACK_IMPORTED_MODULE_2__.img[i]}`, \"просто дверь\", \"door\") // генерация двери\n    house.insertAdjacentElement(\"afterbegin\", door.createEl());\n}\n\n\n\n//# sourceURL=webpack:///./js/code.js?");
+
+/***/ }),
+
+/***/ "./js/data.json":
+/*!**********************!*\
+  !*** ./js/data.json ***!
+  \**********************/
+/*! exports provided: img, instruction, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"{\\\"img\\\":[\\\"door_red.png\\\",\\\"door_purple.png\\\",\\\"door_yellow.png\\\"],\\\"instruction\\\":[\\\"На элемент home уже назначены flex. Назначьте home свойство space-around\\\",\\\"Теперь вам нужно написать код, который назначит каждой двери в виде последнего предка тыкву\\\"]}\");\n\n//# sourceURL=webpack:///./js/data.json?");
 
 /***/ }),
 
@@ -106,7 +117,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _doo
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Door; });\nclass Door{\n    constructor(name, src, alt) {\n        this.name = name;\n        this.src = src;\n        this.alt = alt;\n    }\n    createEl(){\n        console.log(\"СОздаю элемент\")\n        let el = document.createElement(this.name);\n        el.src = this.src;\n        el.alt = this.alt;\n        return el;\n    }\n}\n\n\n//# sourceURL=webpack:///./js/door.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Door; });\nclass Door{\n    constructor(name, src, alt, classText) {\n        this.name = name;\n        this.src = src;\n        this.alt = alt;\n        this.classText = classText;\n    }\n    createEl(){\n        let el = document.createElement(this.name);\n        el.src = this.src;\n        el.alt = this.alt;\n        el.classList.add(this.classText);\n        return el;\n    }\n}\n\n\n//# sourceURL=webpack:///./js/door.js?");
+
+/***/ }),
+
+/***/ "./js/textarea.js":
+/*!************************!*\
+  !*** ./js/textarea.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Textarea; });\nclass Textarea{\n    constructor(name, cols, rows, classText) {\n        this.name = name;\n        this.cols = cols;\n        this.rows = rows;\n        this.classText = classText;\n    }\n    createEl(){\n        let el = document.createElement(this.name);\n        el.cols = this.cols;\n        el.rows = this.rows;\n        el.classList.add(this.classText);\n        return el;\n    }\n}\n\n\n//# sourceURL=webpack:///./js/textarea.js?");
 
 /***/ })
 
