@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/isakura313/Helloween_game#readme",
   "dependencies": {
+    "@types/codemirror": "0.0.98",
+    "codemirror": "^5.58.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.4"
   },

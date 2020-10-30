@@ -1,30 +1,64 @@
-body{
-    background-image: url("img/brick.png");
-    background-size: cover;
+:root{
+    --dark-color: #151B26;
+    --light-yellow: #F2CB05;
+    --dark-yellow: #F28705;
+    --orange: #F24405;
 }
 
+body{
+    background-color: black;
+    background-size: var(--dark-color);
+}
+h1{
+    font-family: 'Jolly Lodger', cursive;
+    text-align: center;
+    font-size: 4rem;
+    color:white;
+}
+.advise{
+    text-align: center;
+    width: 80%;
+    height: 90px;
+    background-color: var(--dark-yellow);
+    color: var(--dark-color);
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    padding: 5px;
+    font-family: 'Pangolin', cursive;
+    margin: 0 auto 20px;
+
+
+}
 .code_space{
+
     font-size: 30px;
+    background-color: #151B26;
+    color:var(--orange)
 }
 .wrapper{
     display: flex;
 }
-.main__h1{
-    font-family: 'Jolly Lodger', cursive;
-    text-align: center;
-    font-size: 4rem;
-    letter-spacing: 4px;
-    color:red;
-}
-.door{
+.door {
     height: 400px;
-    filter: drop-shadow(16px 16px 10px darkred)
+    filter: drop-shadow(16px 16px 10px darkred);
 }
+
+
 .wrap_code{
-    /*display: flex;*/
+    margin: 4em auto 4rem;
+    display: flex;
     flex-direction: column;
+    align-items: center;
 }
-.CodeMirror {
-    font-size: 25px;
-    width: 1000px;
+.add_code{
+    width: 150px;
+    background-color: #F28705;
+    color: #151B26;
+    border:none;
+    padding: 5px;
+    font-size: 20px;
+
+}
+.add_code:hover{
+    box-shadow: 2px 4px 4px red;
 }
