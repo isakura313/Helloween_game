@@ -17,6 +17,7 @@ h1{
 }
 .advise{
     text-align: center;
+    line-height: 1.6;
     width: 80%;
     height: 90px;
     background-color: var(--dark-yellow);
@@ -51,6 +52,7 @@ h1{
     align-items: center;
 }
 .add_code{
+    margin-top:20px;
     width: 150px;
     background-color: #F28705;
     color: #151B26;
